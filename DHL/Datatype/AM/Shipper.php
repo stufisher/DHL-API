@@ -41,6 +41,7 @@ class Shipper extends Base
      * @var array
      */
     protected $_params = array(
+
         'ShipperID' => array(
             'type' => 'ShipperID',
             'required' => false,
@@ -95,6 +96,13 @@ class Shipper extends Base
             'subobject' => false,
             'comment' => 'Full postal/zip code for address',
         ), 
+        'EProcShip'             => [
+            'type'        => 'string',
+            'required'    => false,
+            'subobject'   => false,
+            'comment'     => 'Generate waybill',
+            'enumeration' => 'Y,N',
+        ],
         'OriginServiceAreaCode' => array(
             'type' => 'OriginServiceAreaCode',
             'required' => false,
