@@ -140,7 +140,7 @@ abstract class Base extends BaseDataType
     
         if ($this->_displaySchemaVersion) 
         {
-            $xmlWriter->writeAttribute('schemaVersion', '1.0');
+            $xmlWriter->writeAttribute('schemaVersion', '4.0');
         }
 
         if (null !== $this->_xmlNodeName) 
