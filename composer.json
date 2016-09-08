@@ -1,5 +1,5 @@
 {
-    "name": "alfallouji/dhl_api",
+    "name": "driade/dhl_api",
 
     "description": "PHP library to communicate with the DHL XML Services.",
 
@@ -17,6 +17,10 @@
         {
             "name": "Bashar Al-Fallouji",
             "email": "bashar@alfallouji.com"
+        },
+        {
+            "name": "David Fernández",
+            "email": "david.fernandez@sngular.team"
         }
     ]
 }
