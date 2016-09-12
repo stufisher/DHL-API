@@ -15,7 +15,7 @@
  */
 
 /**
- * File:        BarCodes.php
+ * File:        Barcodes.php
  * Project:     DHL API
  *
  * @author      Al-Fallouji Bashar
@@ -26,9 +26,9 @@ namespace DHL\Datatype\AP;
 use DHL\Datatype\Base;
 
 /**
- * BarCodes Request model for DHL API
+ * Barcodes Request model for DHL API
  */
-class BarCodes extends Base
+class Barcodes extends Base
 {
     /**
      * Is this object a subobject
