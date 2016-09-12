@@ -222,7 +222,7 @@ abstract class Base extends BaseDataType
      */
     public function initFromXML($xml) 
     {
-        $xml = simplexml_load_string(str_replace('req:', '', $xml));
+        $xml = simplexml_load_string(str_replace('req:', '', utf8_encode($xml)));
 
         if ((string) $xml->Response->Status->Condition->ConditionCode != '')
         {
