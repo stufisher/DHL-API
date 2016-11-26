@@ -107,8 +107,8 @@ class ShipValResponsePiece extends Base
             'comment' => 'Piece ID',
             'maxLength' => '35',
         ), 
-        'LicensePlateBarCode' => array(
-            'type' => 'BarCode',
+        'LicensePlateBarcode' => array(
+            'type' => 'Barcode',
             'required' => true,
             'subobject' => false,
             'comment' => '',

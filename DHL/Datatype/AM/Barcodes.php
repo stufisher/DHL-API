@@ -22,7 +22,7 @@
  * @version     0.1
  */
 
-namespace DHL\Datatype\GB; 
+namespace DHL\Datatype\AM; 
 use DHL\Datatype\Base;
 
 /**
@@ -41,26 +41,8 @@ class Barcodes extends Base
      * @var array
      */
     protected $_params = array(
-        'AWBBarCode' => array(
-            'type' => 'string',
-            'required' => false,
-            'subobject' => false,
-            'comment' => '',
-        ), 
-        'OriginDestnBarcode' => array(
-            'type' => 'string',
-            'required' => false,
-            'subobject' => false,
-            'comment' => '',
-        ), 
-        'ClientIDBarCode' => array(
-            'type' => 'string',
-            'required' => false,
-            'subobject' => false,
-            'comment' => '',
-        ), 
-        'DHLRoutingBarCode' => array(
-            'type' => 'string',
+        'Barcode' => array(
+            'type' => 'Barcode',
             'required' => false,
             'subobject' => false,
             'comment' => '',

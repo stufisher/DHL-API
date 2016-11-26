@@ -15,7 +15,7 @@
  */
 
 /**
- * File:        BarCode.php
+ * File:        Barcode.php
  * Project:     DHL API
  *
  * @author      Al-Fallouji Bashar
@@ -26,9 +26,9 @@ namespace DHL\Datatype\GB;
 use DHL\Datatype\Base;
 
 /**
- * BarCode Request model for DHL API
+ * Barcode Request model for DHL API
  */
-class BarCode extends Base
+class Barcode extends Base
 {
     /**
      * Is this object a subobject
@@ -41,7 +41,7 @@ class BarCode extends Base
      * @var array
      */
     protected $_params = array(
-        'BarCode' => array(
+        'Barcode' => array(
             'type' => 'string',
             'required' => false,
             'subobject' => false,
