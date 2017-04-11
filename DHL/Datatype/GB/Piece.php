@@ -99,6 +99,11 @@ class Piece extends Base
             'subobject' => false,
             'comment' => 'Piece contents description',
             'maxLength' => '35',
-        ), 
+        ),
+        'PieceReference' => array(
+            'type' => 'PieceReference',
+            'required' => false,
+            'subobject' => true,
+        ),
     );
 }
