@@ -6,9 +6,9 @@
   },
   "license": "LGPL-2.1",
   "autoload": {
-    "classmap": [
-      "DHL"
-    ]
+    "psr-4": {
+      "DHL\\": "DHL/"
+    }
   },
   "authors": [
     {
