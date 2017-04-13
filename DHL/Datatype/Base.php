@@ -97,7 +97,7 @@ abstract class Base
         $displayedParentNode = false;
         $this->validateParameters();
 
-        if (null !== $this->_xmlNodeName) 
+        if (null !== $this->_xmlNodeName)
         {
             $parentNode = $this->_xmlNodeName;
         }
@@ -402,6 +402,13 @@ abstract class Base
                 }
             break;
 
+            case 'TimeHM':
+                if(!preg_match('/^([0-1][0-9]|2[0-3]):([0-5][0-9])$/', $value)){
+                    throw new \InvalidArgumentException('Invalid type for ' . $key . '. It should be of type : '
+                        . $this->_params[$key]['type'] . ' but it has a value of : ' . $value);
+                }
+                break;
+
             case 'positiveInteger':
             case 'negativeInteger':
             case 'integer':
@@ -442,7 +449,7 @@ abstract class Base
      */
     protected function validateParameterValue($key, $value)
     {
-        foreach ($this->_params[$key] as $type => $typeValue) 
+        foreach ($this->_params[$key] as $type => $typeValue)
         {
             switch ($type) 
             {

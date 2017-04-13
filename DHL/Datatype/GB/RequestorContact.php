@@ -15,20 +15,20 @@
  */
 
 /**
- * File:        Requestor.php
+ * File:        RequestorContact.php
  * Project:     DHL API
  *
- * @author      Al-Fallouji Bashar
- * @version     0.1
+ * @author      MoroAlberto
+ * @version
  */
 
 namespace DHL\Datatype\GB; 
 use DHL\Datatype\Base;
 
 /**
- * Requestor Request model for DHL API
+ * Contact Request model for DHL API
  */
-class Requestor extends Base
+class RequestorContact extends Base
 {
     /**
      * Is this object a subobject
@@ -41,29 +41,26 @@ class Requestor extends Base
      * @var array
      */
     protected $_params = array(
-        'AccountType' => array(
-            'type' => 'string',
+        'PersonName' => array(
+            'type' => 'PersonName',
             'required' => true,
             'subobject' => false,
-            'comment' => 'Account type',
-        ),
-        'AccountNumber' => array(
-            'type' => 'string',
+            'comment' => 'Name',
+            'maxLength' => '35',
+        ), 
+        'Phone' => array(
+            'type' => 'Phone',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Phone Number',
+            'maxLength' => '25',
+        ), 
+        'PhoneExtension' => array(
+            'type' => 'PhoneExtension',
             'required' => false,
             'subobject' => false,
-            'comment' => 'Account number',
-        ),
-        'RequestorContact' => array(
-            'type' => 'RequestorContact',
-            'required' => false,
-            'subobject' => true,
-            'comment' => 'Requestor contact description',
-        ),
-        'CompanyName' => array(
-            'type' => 'string',
-            'required' => false,
-            'subobject' => false,
-            'comment' => 'Required if Contact Name and Contact Phone No.is given',
+            'comment' => '',
+            'maxLength' => '5',
         ),
     );
 }

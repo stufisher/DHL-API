@@ -49,20 +49,25 @@ abstract class Base extends BaseDataType
     protected $_headerParams = array(
         'MessageTime' => array(
             'type' => 'date-iso8601',
-            'required' => true,
+            'required' => false,
+            'comment' => 'Identifies the message time. It is a mandatory field in request message',
         ),
         'MessageReference' => array(
             'type' => 'string',
-            'required' => true,
-            'size' => 28,
+            'required' => false,
+            'minLength' => '28',
+            'maxLength' => '32',
+            'comment' => 'Message reference number.',
         ),
         'SiteID' => array(
             'type' => 'string',
             'required' => true,
+            'comment' => 'Identifies the sender of the request message. It is a mandatory field in the request message.',
         ),
         'Password' => array(
             'type' => 'string',
             'required' => true,
+            'comment' => 'Authenticates the sender of the message. It is a mandatory field in request message.',
         ),
     );
 

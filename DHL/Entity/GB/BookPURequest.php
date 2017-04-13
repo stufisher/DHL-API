@@ -48,6 +48,10 @@ class BookPURequest extends Base
      */
     protected $_serviceXSD = 'BookPURequest.xsd';
 
+    protected $_schemaVersion = '1.0';
+
+    protected $_displaySchemaVersion = true;
+
     /**
      * Parameters to be send in the body
      * @var array
@@ -55,32 +59,32 @@ class BookPURequest extends Base
     protected $_bodyParams = array(
         'RegionCode' => array(
             'type' => 'string',
-            'required' => false,
+            'required' => true,
             'subobject' => false,
-            'comment' => 'RegionCode',
+            'comment' => 'AP – Asia Pacific + Emerging Market / EU – Europe (EU + Non-EU) / AM – Americas (LatAm + US + CA)',
             'minLength' => '2',
             'maxLength' => '2',
             'enumeration' => 'AP,EU,AM',
         ), 
         'Requestor' => array(
-            'type' => 'string',
-            'required' => false,
-            'subobject' => false,
-        ), 
-        'Place' => array(
-            'type' => 'Place',
+            'type' => 'Requestor',
             'required' => false,
             'subobject' => true,
         ), 
+        'Place' => array(
+            'type' => 'PUPlace',
+            'required' => true,
+            'subobject' => true,
+        ), 
         'Pickup' => array(
-            'type' => 'string',
+            'type' => 'Pickup',
             'required' => false,
-            'subobject' => false,
+            'subobject' => true,
         ), 
         'PickupContact' => array(
-            'type' => 'string',
-            'required' => false,
-            'subobject' => false,
+            'type' => 'PickupContact',
+            'required' => true,
+            'subobject' => true,
         ), 
         'ShipmentDetails' => array(
             'type' => 'ShipmentDetails',
