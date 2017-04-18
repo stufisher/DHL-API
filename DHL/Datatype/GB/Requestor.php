@@ -49,13 +49,13 @@ class Requestor extends Base
         ),
         'AccountNumber' => array(
             'type' => 'string',
-            'required' => false,
+            'required' => true,
             'subobject' => false,
             'comment' => 'Account number',
         ),
         'RequestorContact' => array(
             'type' => 'RequestorContact',
-            'required' => false,
+            'required' => true,
             'subobject' => true,
             'comment' => 'Requestor contact description',
         ),

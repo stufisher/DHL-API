@@ -47,7 +47,6 @@ class BookPickupRequest extends Base
      * Service XSD
      */
     protected $_serviceXSD = 'BookPickupRequestAP.xsd';
-
     /**
      * Parameters to be send in the body
      * @var array
@@ -57,13 +56,13 @@ class BookPickupRequest extends Base
             'type' => 'string',
             'required' => false,
             'subobject' => false,
-        ), 
+        ),
         'Place' => array(
             'type' => 'Place',
             'required' => false,
             'subobject' => true,
         ), 
-        'PickUp' => array(
+        'Pickup' => array(
             'type' => 'string',
             'required' => false,
             'subobject' => false,

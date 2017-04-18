@@ -78,7 +78,7 @@ class BookPURequest extends Base
         ), 
         'Pickup' => array(
             'type' => 'Pickup',
-            'required' => false,
+            'required' => true,
             'subobject' => true,
         ), 
         'PickupContact' => array(

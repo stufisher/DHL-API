@@ -44,7 +44,7 @@ class ShipmentDetails extends Base
 
         'AccountType' => array(
             'type' => 'AccountType',
-            'required' => false,
+            'required' => true,
             'subobject' => false,
             'comment' => 'Account Type by method of payment ( DHL account
 				vs. Credit card)',
@@ -75,7 +75,7 @@ class ShipmentDetails extends Base
         ),
         'NumberOfPieces' => array(
             'type' => 'positiveInteger',
-            'required' => false,
+            'required' => true,
             'subobject' => false,
         ),
         'Weight' => array(

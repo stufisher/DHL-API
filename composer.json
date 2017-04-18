@@ -1,5 +1,5 @@
 {
-  "name": "driade/dhl_api",
+  "name": "MoroAlberto/dhl_api",
   "description": "PHP library to communicate with the DHL XML Services.",
   "require": {
     "php": ">=5.3.0"

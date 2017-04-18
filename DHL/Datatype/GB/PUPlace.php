@@ -59,7 +59,7 @@ class PUPlace extends Base
         ), 
         'CompanyName' => array(
             'type' => 'CompanyNameValidator',
-            'required' => false,
+            'required' => true,
             'subobject' => false,
             'comment' => 'Name of company / business',
             'minLength' => '0',
@@ -119,7 +119,7 @@ class PUPlace extends Base
         ),
         'PostalCode' => array(
             'type' => 'PostalCode',
-            'required' => false,
+            'required' => true,
             'subobject' => false,
             'comment' => 'Full postal/zip code for address',
             'maxLength' => '12',

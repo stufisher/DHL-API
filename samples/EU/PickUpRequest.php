@@ -23,12 +23,13 @@ use DHL\Datatype\GB\ShipmentDetails;
 use DHL\Entity\GB\BookPURequest;
 use DHL\Client\Web as WebserviceClient;
 use DHL\Entity\GB\BookPUResponse;
+
 require(__DIR__ . '/../../init.php');
 // DHL Settings
 $dhl = $config['dhl'];
 
 $bookPickUp = new BookPURequest();
-$bookPickUp->MessageTime = date("Y-m-d\TH:m:s").date_default_timezone_get(); //Time this message is sent
+$bookPickUp->MessageTime = date("Y-m-d\TH:m:sP"); //Time this message is sent
 $bookPickUp->MessageReference = '1234567890123456789012345678901'; // A string, preferably number, to uniquely identify individual messages. Minimum length must be 28 and maximum length is 32
 $bookPickUp->SiteID = $dhl['id'];
 $bookPickUp->Password = $dhl['pass'];// Site ID used for verifying the sender
@@ -37,25 +38,25 @@ $bookPickUp->RegionCode = 'EU';
 
 $requestor = new Requestor();
 $requestor->AccountType = 'D';
-$requestor->AccountNumber = '130000279';//optional
+$requestor->AccountNumber = '130000279';
 
 $requestorContact = new RequestorContact();
 $requestorContact->PersonName = 'Rikhil';
 $requestorContact->Phone = '23162';
-$requestor->RequestorContact = $requestorContact;//optional
+$requestor->RequestorContact = $requestorContact;
 
 $requestor->CompanyName = '130000279';//Required if Contact Name and Contact Phone No.is given
-$bookPickUp->Requestor = $requestor;//optional
+$bookPickUp->Requestor = $requestor;
 
 $place = new PUPlace();
 $place->LocationType = 'B';
-$place->CompanyName = 'Test and Co';//optional
+$place->CompanyName = 'Test and Co';
 $place->Address1 = '123 Test Ave';
 $place->Address2 = 'Test Bus Park';//optional
 $place->PackageLocation = 'Reception';
 $place->City = 'Hounslow';
 $place->CountryCode = 'GB';
-$place->PostalCode = 'TW4 6JS';//optional
+$place->PostalCode = 'TW4 6JS';
 $bookPickUp->Place = $place;
 
 $pickup = new Pickup();
@@ -66,17 +67,17 @@ $pickup->Pieces = '';
 $bookPickUp->Pickup = $pickup;
 
 $pickupContact = new PickupContact();
-$pickupContact->PersonName = 'Subhayu';//optional
+$pickupContact->PersonName = 'Subhayu';
 $pickupContact->Phone = '4801313131';
 $bookPickUp->PickupContact = $pickupContact;
 
 $shipmentDetails = new ShipmentDetails();
-$shipmentDetails->AccountType = 'D';//optional
+$shipmentDetails->AccountType = 'D';
 $shipmentDetails->AccountNumber = $dhl['billingAccountNumber'];//optional
 //changedCard not support after 30 may 2016
 $shipmentDetails->BillToAccountNumber = $dhl['billingAccountNumber'];//optional
 $shipmentDetails->AWBNumber = '7520067111';//optional
-$shipmentDetails->NumberOfPieces = '2';//optional
+$shipmentDetails->NumberOfPieces = '2';
 $shipmentDetails->Weight = '999.999';
 $shipmentDetails->WeightUnit = 'K';
 $shipmentDetails->GlobalProductCode = 'D';//optional
@@ -92,7 +93,7 @@ $shipmentDetails->addPiece($piece);//optional
 $specialService = new SpecialService();
 $specialService->SpecialServiceType = 'I';
 $shipmentDetails->SpecialService = $specialService;//optional*/
-$bookPickUp->ShipmentDetails = $shipmentDetails; //o
+$bookPickUp->ShipmentDetails = $shipmentDetails; //optional
 
 // Call DHL XML API
 header('Content-Type: text/plain');

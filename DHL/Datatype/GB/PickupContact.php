@@ -43,7 +43,7 @@ class PickupContact extends Base
     protected $_params = array(
         'PersonName' => array(
             'type' => 'string',
-            'required' => false,
+            'required' => true,
             'subobject' => false,
             'comment' => 'Name',
             'maxLength' => '35',

@@ -79,7 +79,7 @@ class ModifyPURequest extends Base
             'required' => false,
             'subobject' => true,
         ), 
-        'PickUp' => array(
+        'Pickup' => array(
             'type' => 'string',
             'required' => false,
             'subobject' => false,
