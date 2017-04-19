@@ -87,7 +87,7 @@ class BookPURequest extends Base
             'subobject' => true,
         ), 
         'ShipmentDetails' => array(
-            'type' => 'ShipmentDetails',
+            'type' => 'PUShipmentDetails',
             'required' => false,
             'subobject' => true,
         ), 

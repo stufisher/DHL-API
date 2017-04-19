@@ -35,88 +35,88 @@ class ShipmentDetails extends Base
      * @var boolean
      */
     protected $_isSubobject = true;
-
     /**
      * Parameters of the datatype
      * @var array
      */
     protected $_params = array(
-
-        'AccountType' => array(
-            'type' => 'AccountType',
-            'required' => true,
-            'subobject' => false,
-            'comment' => 'Account Type by method of payment ( DHL account
-				vs. Credit card)',
-            'enumeration' => 'D,C',
-            'minLength' => '1',
-            'maxLength' => '1',
-        ),
-        'AccountNumber' => array(
-            'type' => 'AccountNumber',
-            'required' => false,
-            'subobject' => false,
-            'comment' => 'Account number',
-            'maxLength' => '12',
-        ),
-        'BillToAccountNumber' => array(
-            'type' => 'AccountNumber',
-            'required' => false,
-            'subobject' => false,
-            'comment' => 'Account number',
-            'maxLength' => '12',
-        ),
-        'AWBNumber' => array(
-            'type' => 'AWBNumber',
-            'required' => false,
-            'subobject' => false,
-            'comment' => 'Airway bill number',
-            'maxLength' => '10',
-        ),
         'NumberOfPieces' => array(
-            'type' => 'positiveInteger',
-            'required' => true,
+            'type' => 'integer',
+            'required' => false,
             'subobject' => false,
+        ),
+        'Pieces' => array(
+            'type' => 'Piece',
+            'required' => false,
+            'subobject' => true,
+            'multivalues' => true,
         ),
         'Weight' => array(
             'type' => 'Weight',
-            'required' => true,
+            'required' => false,
             'subobject' => false,
             'comment' => 'Weight of piece or shipment',
-            'fractionDigits' => '1',
-            'maxInclusive' => '999999.9',
-            'totalDigits' => '7',
+            'fractionDigits' => '3',
+            'minInclusive' => '0.000',
+            'maxInclusive' => '999999.999',
+            'totalDigits' => '10',
         ),
         'WeightUnit' => array(
             'type' => 'WeightUnit',
-            'required' => true,
+            'required' => false,
             'subobject' => false,
-            'comment' => 'Unit of weight measurement (K:KiloGram)(L:Pounds)',
-            'Length' => '1',
+            'comment' => 'Unit of weight measurement (K:KiloGram)',
+            'minLength' => '0',
+            'maxLength' => '1',
             'enumeration' => 'K,L',
         ),
         'GlobalProductCode' => array(
             'type' => 'GlobalProductCode',
             'required' => false,
             'subobject' => false,
+            'comment' => '',
+            'pattern' => '([A-Z0-9])*',
             'minLength' => '1',
             'maxLength' => '4',
+        ),
+        'LocalProductCode' => array(
+            'type' => 'LocalProductCode',
+            'required' => false,
+            'subobject' => false,
+            'comment' => '',
+            'minLength' => '1',
+            'maxLength' => '4',
+            'pattern' => '([A-Z0-9])*',
+        ),
+        'Date' => array(
+            'type' => 'Date',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Date only',
+            'pattern' => '[0-9][0-9][0-9][0-9](-)[0-9][0-9](-)[0-9][0-9]',
+        ),
+        'Contents' => array(
+            'type' => 'ShipmentContents',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Shipment contents description',
+            'maxLength' => '90',
         ),
         'DoorTo' => array(
             'type' => 'DoorTo',
             'required' => false,
             'subobject' => false,
             'comment' => 'Defines the type of delivery service that applies
-				to the shipment DD (Door to Door), DA (Door to Airport) and DC (Door to Door non-compliant)',
+				to the shipment',
             'length' => '2',
-            'enumeration' => 'DD,DA,DC',
+            'enumeration' => 'DD,DA,AA,DC',
         ),
         'DimensionUnit' => array(
             'type' => 'DimensionUnit',
             'required' => false,
             'subobject' => false,
-            'comment' => 'Dimension Unit I (inches), C(Centremetres)',
-            'Length' => '1',
+            'comment' => 'Dimension Unit C (centimeter)',
+            'length' => '1',
             'enumeration' => 'C,I',
         ),
         'InsuredAmount' => array(
@@ -127,23 +127,51 @@ class ShipmentDetails extends Base
             'minInclusive' => '0.00',
             'maxInclusive' => '9999999999.99',
         ),
-        'InsuredCurrencyCode' => array(
-            'type' => 'InsuredCurrencyCode',
+        'PackageType' => array(
+            'type' => 'PackageType',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Package Type (EE: DHL Express Envelope, OD:Other
+				DHL Packaging, CP:Customer-provided, JB-Jumbo box, JJ-Junior jumbo
+				Box, DF-DHL Flyer, YP-Your packaging)',
+            'length' => '2',
+            'enumeration' => 'BD,BP,CP,DC,DF,DM,ED,EE,FR,JB,JD,JJ,JP,OD,PA,YP',
+        ),
+        'IsDutiable' => array(
+            'type' => 'YesNo',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Boolean flag',
+            'length' => '1',
+            'enumeration' => 'Y,N',
+        ),
+        'CurrencyCode' => array(
+            'type' => 'CurrencyCode',
             'required' => false,
             'subobject' => false,
             'comment' => 'ISO currency code',
             'length' => '3',
         ),
-        'Pieces' => array(
-            'type' => 'Piece',
+        'AdditionalProtection' => array(
+            'type' => 'AdditionalProtection',
             'required' => false,
             'subobject' => true,
-            'multivalues' => true,
         ),
-        'SpecialService' => array(
-            'type' => 'SpecialService',
+        'DOSFlag' => array(
+            'type' => 'YesNo',
             'required' => false,
-            'subobject' => true,
+            'subobject' => false,
+            'comment' => 'Boolean flag',
+            'length' => '1',
+            'enumeration' => 'Y,N',
+        ),
+        'CustData' => array(
+            'type' => 'CustData',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'CustData',
+            'minLength' => '1',
+            'maxLength' => '100',
         ),
     );
 }

@@ -17,6 +17,7 @@
 use DHL\Datatype\GB\Pickup;
 use DHL\Datatype\GB\PickupContact;
 use DHL\Datatype\GB\PUPlace;
+use DHL\Datatype\GB\PUShipmentDetails;
 use DHL\Datatype\GB\Requestor;
 use DHL\Datatype\GB\RequestorContact;
 use DHL\Datatype\GB\ShipmentDetails;
@@ -71,7 +72,7 @@ $pickupContact->PersonName = 'Subhayu';
 $pickupContact->Phone = '4801313131';
 $bookPickUp->PickupContact = $pickupContact;
 
-$shipmentDetails = new ShipmentDetails();
+$shipmentDetails = new PUShipmentDetails();
 $shipmentDetails->AccountType = 'D';
 $shipmentDetails->AccountNumber = $dhl['billingAccountNumber'];//optional
 //changedCard not support after 30 may 2016
