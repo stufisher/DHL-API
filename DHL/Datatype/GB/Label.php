@@ -41,12 +41,20 @@ class Label extends Base
      * @var array
      */
     protected $_params = array(
+        'HideAccount' => array(
+            'type' => 'YesNo',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Boolean flag',
+            'length' => '1',
+            'enumeration' => 'Y,N',
+        ),
         'LabelTemplate' => array(
             'type' => 'LabelTemplate',
             'required' => false,
             'subobject' => false,
             'comment' => 'LabelTemplate',
-            'enumeration' => '8X4_A4_PDF,8X4_thermal,8X4_A4_TC_PDF,6X4_PDF,6X4_A4_PDF,6X4_thermal,8X4_CI_PDF,8X4_CI_thermal',
+            'enumeration' => '8X4_A4_PDF,8X4_thermal,8X4_A4_TC_PDF,6X4_PDF,6X4_A4_PDF,6X4_thermal,8X4_CI_PDF,8X4_CI_thermal,8X4_RU_A4_PDF',
         ), 
         'Logo' => array(
             'type' => 'YesNo',
