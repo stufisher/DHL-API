@@ -48,6 +48,10 @@ class CancelPURequest extends Base
      */
     protected $_serviceXSD = 'CancelPURequest.xsd';
 
+    protected $_schemaVersion = '1.0';
+
+    protected $_displaySchemaVersion = true;
+
     /**
      * Parameters to be send in the body
      * @var array
