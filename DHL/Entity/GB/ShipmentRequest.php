@@ -185,13 +185,13 @@ class ShipmentRequest extends Base
             'required' => false,
             'subobject' => false,
         ),
-        'NumberOfArchiveDoc'  => [
+        'NumberOfArchiveDoc'  => array(
             'type'        => 'string',
             'required'    => false,
             'subobject'   => false,
             'comment'     => '',
             'enumeration' => '1,2',
-        ],
+        ),
         'Label' => array(
             'type' => 'Label',
             'required' => false,
