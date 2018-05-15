@@ -409,6 +409,13 @@ abstract class Base
                 }
                 break;
 
+            case 'TimeHMS':
+                if(!preg_match('/^([0-1][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/', $value)){
+                    throw new \InvalidArgumentException('Invalid type for ' . $key . '. It should be of type : '
+                        . $this->_params[$key]['type'] . ' but it has a value of : ' . $value);
+                }
+                break;
+
             case 'positiveInteger':
             case 'negativeInteger':
             case 'integer':

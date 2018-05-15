@@ -73,14 +73,12 @@ class BookPUResponse extends Base
             'subobject' => true,
         ), 
         'ConfirmationNumber' => array(
-            'type' => 'positiveInteger',
+            'type' => 'string',
             'required' => false,
             'subobject' => false,
-            'minInclusive' => '1',
-            'maxInclusive' => '999999999',
         ), 
         'ReadyByTime' => array(
-            'type' => 'TimeHM',
+            'type' => 'TimeHMS',
             'required' => false,
             'subobject' => false,
         ), 
@@ -125,6 +123,13 @@ class BookPUResponse extends Base
         ), 
         'CountryCode' => array(
             'type' => 'CountryCode',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'ISO country codes',
+            'length' => '2',
+        ), 
+        'RequestorCountryCode' => array(
+            'type' => 'RequestorCountryCode',
             'required' => false,
             'subobject' => false,
             'comment' => 'ISO country codes',

@@ -49,6 +49,18 @@ class GetQuote extends Base
     protected $_xmlNodeName = 'GetQuote';
 
     /**
+     * @var string
+     * The schema version
+     */
+    protected $_schemaVersion = '2.0';
+
+    /**
+     * Display the schema version
+     * @var boolean
+     */
+    protected $_displaySchemaVersion = true;
+
+    /**
      * Parameters to be send in the body
      * @var array
      */

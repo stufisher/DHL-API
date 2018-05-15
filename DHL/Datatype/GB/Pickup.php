@@ -29,6 +29,15 @@ class Pickup extends Base
             'required' => true,
             'subobject' => false,
         ),
+        'PickupTypeCode' => array(
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'same day or advance pickup',
+            'minLength' => '1',
+            'maxLength' => '1',
+            'enumeration' => 'S,A',
+        ), 
         'ReadyByTime' => array(
             'type' => 'TimeHM',
             'required' => true,

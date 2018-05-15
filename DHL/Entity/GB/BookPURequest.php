@@ -48,7 +48,7 @@ class BookPURequest extends Base
      */
     protected $_serviceXSD = 'BookPURequest.xsd';
 
-    protected $_schemaVersion = '1.0';
+    protected $_schemaVersion = '3.0';
 
     protected $_displaySchemaVersion = true;
 

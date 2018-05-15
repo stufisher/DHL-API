@@ -96,14 +96,7 @@ class PUPlace extends Base
             'comment' => 'City name',
             'maxLength' => '35',
         ),
-        'DivisionCode' => array(
-            'type' => 'StateCode',
-            'required' => false,
-            'subobject' => false,
-            'comment' => 'Division (state) code.',
-            'maxLength' => '35',
-        ), 
-        'Division' => array(
+        'DivisionName' => array(
             'type' => 'State',
             'required' => false,
             'subobject' => false,
