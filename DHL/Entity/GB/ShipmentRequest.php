@@ -118,6 +118,27 @@ class ShipmentRequest extends Base
             'required' => false,
             'subobject' => true,
         ), 
+        'UseDHLInvoice' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Create DHL commercial invoice',
+            'enumeration' => 'Y,N',
+        ), 
+        'DHLInvoiceLanguageCode' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Language for invoice',
+            'enumeration' => 'bg,br,bs,cs,da,de,el,en,ep,et,fi,fr,he,hr,hu,is,it,lt,lv,mk,nl,no,pl,pt,ro,ru,si,sk,sp,sq,sr,sv,tr,uk',
+        ), 
+        'DHLInvoiceType' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Type of invoice Commercial or Proforma',
+            'enumeration' => 'CMI,PFI',
+        ), 
         'ExportDeclaration' => array(
             'type' => 'ExportDeclaration',
             'required' => false,
@@ -196,6 +217,13 @@ class ShipmentRequest extends Base
             'type' => 'Label',
             'required' => false,
             'subobject' => true,
+        ), 
+        'ODDLinkReq' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Whether to receive URL link for On Demand Delivery page',
+            'enumeration' => 'Y,N',
         ), 
     );
 }
