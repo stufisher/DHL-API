@@ -108,6 +108,21 @@ class ExportDeclaration extends Base
             'required' => false,
             'subobject' => false,
         ), 
+        'InvoiceNumber' => array(
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+        ), 
+        'InvoiceDate' => array(
+            'type' => 'date',
+            'required' => true,
+            'subobject' => false,
+        ),
+        'ReceiverReference' => array(
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+        ), 
         'ExportLineItems' => array(
             'type' => 'ExportLineItem',
             'required' => false,

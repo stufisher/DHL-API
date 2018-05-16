@@ -61,7 +61,7 @@ class ExportLineItem extends Base
             'required' => false,
             'subobject' => false,
             'comment' => 'Quantity unit of measure (tens, hundreds, thousands, etc.)',
-            'maxLength' => '8',
+            'enumeration' => 'UOM,BOX,2GM,2M,2M3,3M3,M3,DPR,DOZ,2NO,PCS,GM,GRS,KG,L,M,3GM,3L,X,NO,2KG,PRS,2L,3KG,CM2,2M2,3M2,M2,4M2,3M,CM,CONE,CT,EA,LBS,RILL,ROLL,SET,TU,YDS'
         ), 
         'Description' => array(
             'type' => '',
@@ -102,9 +102,14 @@ class ExportLineItem extends Base
             'subobject' => false,
         ), 
         'Weight' => array(
-            'type' => '',
+            'type' => 'Weight',
             'required' => false,
-            'subobject' => false,
+            'subobject' => true,
+        ), 
+        'GrossWeight' => array(
+            'type' => 'GrossWeight',
+            'required' => false,
+            'subobject' => true,
         ), 
         'License' => array(
             'type' => '',
