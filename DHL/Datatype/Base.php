@@ -179,7 +179,7 @@ abstract class Base
                 foreach ($child->children() as $subchild) 
                 {
                     $subchildName = $subchild->getName();
-                    $childClassname = implode('\\', $parts) . '\\' . $this->_params[$subchildName]['type'];
+                    $childClassname = implode('\\', $parts) . '\\' . $this->_params[$childName]['type'];
                     $childClassname = str_replace('Entity', 'Datatype', $childClassname);
                     if ('string' == $this->_params[$subchildName]['type'])
                     {
