@@ -77,6 +77,20 @@ class ShipmentResponse extends Base
             'required' => false,
             'subobject' => false,
         ), 
+        'DHLInvoiceLanguageCode' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Language for invoice',
+            'enumeration' => 'bg,br,bs,cs,da,de,el,en,ep,et,fi,fr,he,hr,hu,is,it,lt,lv,mk,nl,no,pl,pt,ro,ru,si,sk,sp,sq,sr,sv,tr,uk',
+        ), 
+        'DHLInvoiceType' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Type of invoice Commercial or Proforma',
+            'enumeration' => 'CMI,PFI',
+        ), 
         'DHLRoutingCode' => array(
             'type' => 'string',
             'required' => false,
